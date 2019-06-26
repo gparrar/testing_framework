@@ -1,0 +1,97 @@
+packages:
+# CORE PACKAGES
+  - packageId: General
+    packageType: GeneralPackage
+    packageManifestParams:
+    viewMenuParams:
+      menuOnHover: general_menu_on_hover
+      menuTitle: general_menu_title
+    roles: [user]
+
+  - packageId: Traffic
+    packageType: TrafficPackage
+    packageManifestParams:
+      kpis: [flowcapacity, flow, phf, density, densitymax, speed, mi, congestion, classification, los]
+      dataUnknownColor: '#c97a04'  # hashtag is a comment in yaml
+      vehicleTypes: ['Moto', 'Small', 'Large', 'Van', 'Bus', 'Truck', 'Truck 2', 'Truck 3']
+      objectName: mb
+      objectType: traffic_mb
+    viewMenuParams:
+      menuOnHover: traffic_menu_on_hover
+      menuTitle: traffic_menu_title
+    roles: [user]
+
+  - packageId: Bitcarrier
+    packageType: TrafficFlowPackage
+    packageManifestParams:
+      objectName: mb
+      speedRangeUnknownColor: '#c97a04'  # hashtag is a comment in yaml
+      bitCarrierAppUrl: https://aplicacion.movilidadbogota.gov.co/
+    viewMenuParams:
+      menuOnHover: traffic_flow_menu_on_hover
+      menuTitle: traffic_flow_menu_title
+    roles: [user]
+
+  - packageId: Tracking
+    packageType: TrackingPackage
+    packageManifestParams:
+      objectName: mb
+      showInactive: true
+      objectType: mb_tracking
+      trackingTypesNumber: 20
+      timelapseColor: '#5050ff' # Accepted values are the ones supported by carto: https://carto.com/docs/carto-engine/cartocss/properties/#color
+    viewMenuParams:
+      menuOnHover: tracking_menu_on_hover
+      menuTitle: tracking_menu_title
+    roles: [user]
+
+  - packageId: Incidents
+    packageType: IncidencesPackage
+    packageManifestParams:
+      objectName: mb
+      incidencesTypesNumber: 100
+      incidentsAppUrl: http://incidents.worldsensing.com
+    viewMenuParams:
+      menuOnHover: incidences_menu_on_hover
+      menuTitle: incidences_menu_title
+    roles: [user]
+
+  - packageId: Google
+    packageType: LinkPackage
+    packageManifestParams:
+      url: http://google.es
+    viewMenuParams:
+      menuTitle: link_menu_title
+      menuOnHover: link_menu_on_hover
+    roles: [user]
+
+# CUSTOM PACKAGES
+  - packageId: RobotA
+    packageType: COSPackage
+    packageManifestParams:
+      objectType: robot_iz_test_1
+      title: Robot Influencer
+      position: left
+      popupWidth: 350
+      popupHeight: 490
+    roles: [user]
+  - packageId: RobotB
+    packageType: COSPackage
+    packageManifestParams:
+      objectType: robot_iz_test_2
+      title: Robot Influenced
+      position: left
+      popupWidth: 350
+      popupHeight: 490
+    roles: [user]
+
+
+configuration:
+  title: Mobility
+  locale: en
+  timezone: GMT
+  dateFormat: DD-MM-YYYY HH:mm:ss A
+  map:
+    mapBoxApiKey: pk.eyJ1Ijoid29ybGRzZW5zaW5nIiwiYSI6ImNpeHVtMWR5NzAwMWozMm52MmZqeTRib3UifQ.TDZyzSml1bBvGsxPrEocvg
+    defaultCoordinates: [41.387770, 2.187951]
+    defaultZoom: 18

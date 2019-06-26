@@ -1,0 +1,3 @@
+[submodule "robotframework-SikuliLibrary"]
+	path = robotframework-SikuliLibrary
+	url = https://github.com/rainmanwy/robotframework-SikuliLibrary.git
